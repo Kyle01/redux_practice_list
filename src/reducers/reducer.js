@@ -1,16 +1,17 @@
 import {
-    RECEIVE_INFORMATION,
+    SEND_INFORMATION,
     RECEIVE_ERRORS
 } from '../actions/items_actions';
+import merge from "lodash/merge";
 
 const rootReducer = (state = [], action) => {
     Object.freeze(state);
 
     switch (action.type) {
-      case RECEIVE_INFORMATION:
-        return [];
-        case RECEIVE_ERRORS:
-        return [];
+      case SEND_INFORMATION:
+        return merge({}, state, { item: action.item });
+      case RECEIVE_ERRORS:
+        return merge({}, state, { item: action.errors });
       default:
         return state;
     }

@@ -1,12 +1,12 @@
-export const RECEIVE_INFORMATION = 'RECEIVE_INFORMATION';
+export const SEND_INFORMATION = "SEND_INFORMATION";
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
-const receiveInformation = item => ({
-    type: RECEIVE_INFORMATION,
-    item
+export const sendInformation = item => ({ 
+    type: SEND_INFORMATION, 
+    item 
 });
 
-const receiveErrors = errors => ({
+export const receiveErrors = errors => ({
     type: RECEIVE_ERRORS,
     errors
 });
