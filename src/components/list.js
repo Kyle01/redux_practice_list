@@ -28,7 +28,8 @@ class List extends Component {
 
     handleLeft(e){
         e.preventDefault();
-        this.props.send(e.target.value);
+        this.props.sendFirst("test");
+        debugger;
     }
 
     render(){
@@ -38,7 +39,7 @@ class List extends Component {
                     <input type="text" value={this.state.item} onChange={this.handleInput()} />
                     <button onClick={this.handleSubmit} >X</button>
                 </form>
-                {this.props.sent.to_a}
+                {this.props.sent}
                 <ul>
                     {this.state.items.map((el) => <li>
                         {el}<button onClick={this.handleLeft}></button></li>)}
